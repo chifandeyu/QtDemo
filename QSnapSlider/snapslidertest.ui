@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SnapSliderTest</class>
+ <widget class="QWidget" name="SnapSliderTest">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>627</width>
+    <height>299</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SnapSliderTest</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#SnapSliderTest{
+	background-color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <widget class="SnapSlider" name="m_pSlider" native="true">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>461</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SnapSlider</class>
+   <extends>QWidget</extends>
+   <header>snapslider.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
