@@ -308,8 +308,8 @@ QRect SnapSlider::getAdjustedGrooveRect() {
     grooveRect.setHeight(m_grooveHeight);
     grooveRect.moveCenter(QPoint(grooveRect.center().x(), height()/2));
 
-    // 左侧预留滑块半径，右侧不缩减（确保最大值位置充足）
-    grooveRect.adjust(m_handleRadius, 0, 0, 0);
+    // 左侧右侧预留滑块半径
+    grooveRect.adjust(m_handleRadius, 0, -m_handleRadius, 0);
     return grooveRect;
 }
 
@@ -321,8 +321,8 @@ QRect SnapSlider::getHandleRect() {
     double ratio = getValueRatio(value());
     // 计算X坐标（按比例精准定位，19和20各有对应位置）
     int x = grooveRect.left() + grooveRect.width() * ratio;
-    // 限制滑块不超出控件右边界（仅最大值时触发）
-    x = qMin(x, grooveRect.right() - m_handleRadius);
+    // 滑块的x坐标
+    x = qMin(x, grooveRect.right());
 
     handleRect.moveCenter(QPoint(x, height()/2));
     return handleRect;
